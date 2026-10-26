@@ -13,6 +13,7 @@ Armed with a fully hierarchical description of the intrinsic and PSF properties 
 We will use Galsim to generate fake galaxy images. We will then use the MetaCal implementation in background.py to measure their shears. This implementation doesn't have a solid PSF implementation. We want to model the PSF in terms of the detector frame coordinates at which a galaxy was observed. We can write a fake PSF model where we concolve the GalSim images with an underlying true PSF model, in terms of some Zernike modes depending on wether they fall in one of the four cells of the detector frame. We can then use of order 200 noisy images to infer both their shears and the amplitude of the Zernike modes in each cell of the detector frame. We want to write the statistical model in JAX, using HMC to do the inference.
 
 ## Reading list
-- Conceptual introduction to HMC: https://num.pyro.ai/en/stable/examples/funnel.html
-- Hierarchical lensing (lenshmc): https://arxiv.org/abs/1701.02434
+- Conceptual introduction to HMC: https://arxiv.org/abs/1701.02434
+- Hierarchical lensing (lenshmc): https://arxiv.org/abs/2604.22048
 - METACAL KiDS: https://arxiv.org/pdf/2510.01122
+- Neal's funnel: https://num.pyro.ai/en/stable/examples/funnel.html
